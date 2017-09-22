@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+*:not(i) {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  background-color: #ccd1e1;
+  background-image: -webkit-radial-gradient(center ellipse, #f3f4f8 30%, #ccd1e1 100%);
+  background-image: radial-gradient(ellipse at center, #f3f4f8 30%, #ccd1e1 100%);
+}
+
+.collage-container {
+  display: block;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  position: relative;
+  width: 75%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.collage-container:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 66.66667%;
+}
+
+.collage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.5%;
+  background: white;
+  box-shadow: 0 6px 80px -4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.collage:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -25px;
+  width: 60%;
+  height: 10px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 0 50px 36px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+.collage .collage-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  position: relative;
+  width: 50%;
+  height: 50%;
+  padding: 0.5%;
+}
+.collage .collage-item:first-child .collage-item-image {
+  background-image: url("http://lorempixel.com/400/300/city");
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+}
+.collage .collage-item:nth-child(2) .collage-item-image {
+  background-image: url("http://lorempixel.com/400/300/nightlife");
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+}
+.collage .collage-item:nth-child(3) .collage-item-image {
+  background-image: url("http://lorempixel.com/400/300/people");
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+}
+.collage .collage-item:nth-child(4) .collage-item-image {
+  background-image: url("http://lorempixel.com/400/300/");
+  -webkit-transform-origin: right bottom;
+          transform-origin: right bottom;
+}
+.collage .collage-item.open .collage-item-image {
+  -webkit-transform: scale(2.022);
+          transform: scale(2.022);
+  -webkit-transform: scale3d(2.022, 2.028, 1);
+          transform: scale3d(2.022, 2.028, 1);
+  -webkit-transition: z-index 0.4s 0.2s, -webkit-transform 0.4s 0.2s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: z-index 0.4s 0.2s, -webkit-transform 0.4s 0.2s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: transform 0.4s 0.2s cubic-bezier(0.65, 0.05, 0.36, 1), z-index 0.4s 0.2s;
+  transition: transform 0.4s 0.2s cubic-bezier(0.65, 0.05, 0.36, 1), z-index 0.4s 0.2s, -webkit-transform 0.4s 0.2s cubic-bezier(0.65, 0.05, 0.36, 1);
+  z-index: 999;
+}
+.collage .collage-item.open ~ .collage-hover-overlay {
+  visibility: visible;
+  -webkit-transition: visibility 0.4s 0.2s, opacity 0.4s 0.2s;
+  transition: visibility 0.4s 0.2s, opacity 0.4s 0.2s;
+  opacity: 1;
+}
+.collage .collage-item .collage-item-image {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transition: z-index 0.4s, -webkit-transform 0.5s;
+  transition: z-index 0.4s, -webkit-transform 0.5s;
+  transition: transform 0.5s, z-index 0.4s;
+  transition: transform 0.5s, z-index 0.4s, -webkit-transform 0.5s;
+  will-change: transform, opacity, z-index;
+  z-index: 1;
+}
+.collage .collage-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
+  width: 33.33333%;
+  height: 50%;
+  padding: 1%;
+  background: white;
+  border-radius: 100%;
+  -webkit-transition: z-index 0.4s, -webkit-transform 0.5s;
+  transition: z-index 0.4s, -webkit-transform 0.5s;
+  transition: transform 0.5s, z-index 0.4s;
+  transition: transform 0.5s, z-index 0.4s, -webkit-transform 0.5s;
+  z-index: 10;
+}
+.collage .collage-hero:hover .collage-hero-image {
+  border-radius: 0%;
+  -webkit-transform: scale(2.065);
+          transform: scale(2.065);
+  -webkit-transition: border-radius 0.6s 0.2s, z-index 0.4s 0.2s, -webkit-transform 0.4s 0.2s;
+  transition: border-radius 0.6s 0.2s, z-index 0.4s 0.2s, -webkit-transform 0.4s 0.2s;
+  transition: transform 0.4s 0.2s, border-radius 0.6s 0.2s, z-index 0.4s 0.2s;
+  transition: transform 0.4s 0.2s, border-radius 0.6s 0.2s, z-index 0.4s 0.2s, -webkit-transform 0.4s 0.2s;
+  z-index: 999;
+}
+.collage .collage-hero:hover ~ .collage-hover-overlay {
+  visibility: visible;
+  -webkit-transition: visibility 0.4s 0.2s, opacity 0.4s 0.2s;
+  transition: visibility 0.4s 0.2s, opacity 0.4s 0.2s;
+  opacity: 1;
+}
+.collage .collage-hero .collage-hero-image {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://hd.unsplash.com/photo-1470897655254-05feb2d2ab97");
+  background-size: cover;
+  background-position: center center;
+  border-radius: 100%;
+  -webkit-transition: border-radius 0.7s 0.3s, z-index 0.4s, -webkit-transform 0.5s;
+  transition: border-radius 0.7s 0.3s, z-index 0.4s, -webkit-transform 0.5s;
+  transition: transform 0.5s, border-radius 0.7s 0.3s, z-index 0.4s;
+  transition: transform 0.5s, border-radius 0.7s 0.3s, z-index 0.4s, -webkit-transform 0.5s;
+  will-change: transform, opacity, border-radius, z-index;
+  z-index: 1;
+}
+.collage .collage-hover-overlay {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  will-change: visibility, opacity;
+  opacity: 0;
+  -webkit-transition: visibility 0.5s, opacity 0.5s;
+  transition: visibility 0.5s, opacity 0.5s;
+  z-index: 5;
+}
+</style>
+<body>
+<div class="collage-container">
+	<div class="collage">
+		<div class="collage-item">
+			<div class="collage-item-image">
+				<p>Murat<p>
+			</div>
+		</div>
+		<div class="collage-item">
+			<div class="collage-item-image"></div>
+		</div>
+		<div class="collage-item">
+			<div class="collage-item-image"></div>
+		</div>
+		<div class="collage-item">
+			<div class="collage-item-image"></div>
+		</div>
+		<div class="collage-hero">
+			<div class="collage-hero-image"></div>
+		</div>
+		<div class="collage-hover-overlay"></div>
+	</div>
+</div>	
+</body>
+</html>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$( document ).ready(function() {
+	var width = $('.collage').width();
+	// var padding = width * 0.005;
+	// $(this).css('box-shadow', '10px 10px 5px #888');
+	
+	$('.collage-item').on('click', function() {
+	  $(this).toggleClass('open')
+	})
+	$(window).resize(function(){
+		var collage = $('.collage');
+		var collageItem = $('.collage-item');
+		var width = collage.width();
+		var padding = width * 0.005;
+		// collage.css('box-shadow', 'inset 0 0 0 ' + padding + 'px ' + 'green');
+		// collageItem.css('box-shadow', 'inset 0 0 0 ' + padding + 'px ' + 'blue');
+
+	});
+});	
+</script>

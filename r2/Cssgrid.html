@@ -1,0 +1,150 @@
+<html class="">
+<head>
+<style>
+@font-face {
+  font-family: "Redacted";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/redacted-regular.eot");
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/redacted-regular.woff2") format("woff2"),
+       url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/redacted-regular.woff") format("woff"),
+       url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/redacted-regular.otf") format("opentype"),
+       url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/redacted-regular.svg#filename") format("svg");
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background: #456BD9;
+  color: #FFF;
+  font-family: Redacted, sans-serif;
+  line-height: 1.4;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+pre,
+code {
+  font-family: "Source Code Pro", monospace;
+}
+
+pre {
+  background: #0F1C3F;
+  color: #FFF;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+figure {
+  background: #0F1C3F;
+}
+
+figcaption {
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 1em;
+}
+
+.Prose {
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.Prose > * + * {
+  margin-top: 1em;
+}
+
+.Prose-splash {
+  background-color: #aacae1;
+  background-image: linear-gradient(182deg, transparent 74%, #016b59 74.1%), linear-gradient(178deg, transparent 68%, #018e77 68.1%), linear-gradient(181deg, transparent 58%, #01b295 58.1%), linear-gradient(179deg, transparent 50%, #2bbfa7 50.1%);
+  text-align: center;
+}
+
+.Nav {
+  background-color: #0F1C3F;
+  color: #FFF;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 1em;
+}
+
+@media (min-width: 40em) {
+  .Nav {
+    background-image: linear-gradient(-95deg, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0) 20%);
+  }
+}
+</style>
+<style type="text/css" class="cp-pen-styles">.Prose {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: [full-start] minmax(1em, 1fr) [main-start] minmax(0, 40em) [main-end] minmax(1em, 1fr) [full-end];
+      grid-template-columns: [full-start] minmax(1em, 1fr) [main-start] minmax(0, 40em) [main-end] minmax(1em, 1fr) [full-end];
+}
+
+.Prose > * {
+  -ms-grid-column: main;
+      grid-column: main;
+}
+
+.Prose > figure {
+  -ms-grid-column: full;
+      grid-column: full;
+}
+
+.Prose > figure img {
+  display: block;
+}
+
+@media (min-width: 60em) {
+  .Prose > figure {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
+    display: inherit;
+    -ms-grid-columns: inherit;
+        grid-template-columns: inherit;
+  }
+  
+  /**
+   * Wrapping div required for Firefox for some reason? 😕
+   */
+  
+  .Prose > figure > div {
+    grid-column: main / full;
+  }
+  
+  .Prose > figure > figcaption {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    text-align: right;
+  }
+}</style></head><body>
+<div class="Prose">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis enim sit amet metus laoreet, ut condimentum metus dapibus. Phasellus sed gravida augue, eu finibus felis. Integer augue libero, aliquam lacinia nisl sed, sagittis fringilla nisl. Phasellus sapien mi, porttitor in metus sed, iaculis dignissim mauris.</p>
+  <figure>
+    <div>
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/20150925_rfdpdx_0169-X3.jpg" alt="">
+    </div>
+    <figcaption>
+      Jason conducts a panel discussion with Sophie Shepherd, Val Head and Brad Frost at Responsive Field Day.
+    </figcaption>
+  </figure>
+  <p>Vivamus fringilla orci dui, vitae aliquet tortor hendrerit eget. Nam nec dui accumsan, posuere ligula sed, dictum velit. Praesent in lorem ac libero lacinia luctus. Duis sed ante sit amet massa tempus dignissim. Mauris vitae finibus risus. In nec diam velit. Aenean pulvinar urna ut ligula elementum tincidunt. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut libero tortor, lacinia eu pharetra at, bibendum vitae turpis. Aenean at bibendum dui. Curabitur sit amet tempus nisi, at molestie ligula. Aliquam tristique ligula a hendrerit luctus. Curabitur tristique quis erat et egestas.</p>
+  <p>Praesent scelerisque tellus et ex mollis, vel venenatis quam auctor. Pellentesque nibh ante, rhoncus vulputate nisl quis, gravida dapibus nunc. Vestibulum facilisis mi a hendrerit convallis. Sed consectetur purus id turpis efficitur, id eleifend velit vestibulum. Maecenas vestibulum aliquet urna et pulvinar. Donec consectetur in nibh quis consectetur. Quisque semper dictum eros et accumsan. Morbi sit amet mollis nisl. Morbi sagittis lectus vel nisi sollicitudin rutrum. Cras consectetur risus hendrerit tortor auctor fringilla. Vestibulum efficitur consectetur ante ac pellentesque. Vivamus laoreet mollis euismod. Vestibulum in finibus tellus, eu vestibulum leo. Morbi luctus enim neque, et sagittis mauris aliquet nec.</p>
+  <p>Ut rutrum egestas lectus tempus pellentesque. Suspendisse vulputate risus at justo iaculis viverra. Integer ligula nisl, facilisis at justo vel, sodales lobortis nisl. Pellentesque eget tempor ex. Donec neque lacus, consequat eget fermentum at, sodales sit amet augue. Donec turpis ipsum, tincidunt et venenatis ac, hendrerit nec mauris. Sed tristique justo sed est finibus euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar ut justo sit amet vestibulum. Fusce quis risus ac ligula varius rhoncus vitae id nisi. Proin ullamcorper imperdiet gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam accumsan congue enim, eu fermentum nibh fringilla ut.</p>
+  <p>Vivamus porta purus in libero tempor gravida. Nullam elementum nunc sit amet tortor blandit, id gravida diam convallis. Nam in erat interdum, pharetra turpis eu, pellentesque arcu. Cras lobortis placerat ligula, ac venenatis libero blandit a. Pellentesque vehicula nec augue non ullamcorper. Pellentesque viverra at mauris at egestas. Sed at tortor sed lacus aliquet gravida. Sed ullamcorper imperdiet ipsum, scelerisque ultrices magna dapibus a. Nam blandit vestibulum gravida. Phasellus lorem lorem, convallis ut massa nec, interdum varius elit. Sed at metus diam. Aliquam erat volutpat. Morbi ante tortor, aliquam sit amet eleifend sed, aliquam eu ex. Pellentesque ipsum turpis, consectetur quis ornare vel, aliquet ac sem. Quisque molestie, urna et malesuada dapibus, urna ipsum tincidunt enim, mollis dapibus velit lacus sed metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
+</div>
+
+</body></html>
